@@ -10,4 +10,6 @@
 
 @interface FISReposDataStore : NSObject
 
+@property (strong, nonatomic) NSMutableArray *repositories;
+
 @end

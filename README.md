@@ -154,7 +154,7 @@ As you can see we have quite a lot of data on each repo.
   1. Finish the `FISGithubRepository` object. It should have the following properties and an `isEqual` method that compares the two `FISGithubRepository` objects.
 
   ```
-  (NSString *)fullNamepa
+  (NSString *)fullName // eg- 'githubUser/nameOfRepo'
   (NSURL *)htmlURL
   (NSString *)repositoryID
   ```

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FISGithubRepository.h"
+#import "FISReposDataStore.h"
 
 @interface FISReposTableViewController : UITableViewController
 

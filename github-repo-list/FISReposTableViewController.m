@@ -7,20 +7,16 @@
 //
 
 #import "FISReposTableViewController.h"
+#import "FISReposDataStore.h"
 
 @interface FISReposTableViewController ()
+
+@property (nonatomic, strong) NSArray *repositories;
+@property (nonatomic, strong) FISReposDataStore *dataStore;
+
 @end
 
 @implementation FISReposTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -28,6 +24,26 @@
 
     self.tableView.accessibilityIdentifier = @"Repo Table View";
     self.tableView.accessibilityLabel=@"Repo Table View";
+
+    self.dataStore = [FISReposDataStore sharedDataStore];
+    
+    [self.dataStore parseAllReposWithCompletion:^(NSArray* reposArray) {
+        self.repositories = reposArray;
+        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
+    }];
+    
+    
+//    [[FISReposDataStore sharedDataStore] fetchRepositoriesWithCompletion:^(BOOL success) {
+//        //self.repositories = [NSArray arrayWithArray:[FISReposDataStore sharedDataStore].repositories];
+//        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+//
+//        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+//            [self.tableView reloadData];
+//        }];
+//    }];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -51,7 +67,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+//    return [FISReposDataStore sharedDataStore].repositories.count;
+//    return self.dataStore.repositories.count;
+    return [self.repositories count];
     // Return the number of rows in the section.
 }
 
@@ -61,6 +79,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    FISGithubRepository *repo = self.repositories[indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@", repo.fullName];
+//    NSLog(@"Title: %@ row: %lu", repo.fullName, indexPath.row);
+    
+    cell.textLabel.text = repo.fullName;
     
     return cell;
 }

@@ -10,5 +10,8 @@
 
 @interface FISGithubAPIClient : NSObject
 
+// Method that retrieves a list of ALL repos and passes NSARRAY of NSDICTIONARIES to completionBlock [NSURLSession]
+
++(void)getAllReposWithCompletionHandler:(void (^)(NSArray *, NSError *))completionBlock;
 
 @end

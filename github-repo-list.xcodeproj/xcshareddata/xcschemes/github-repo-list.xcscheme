@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0630"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313A2C281A08157300F1073A"
+               BlueprintIdentifier = "E270C68E1B4C56CF00F5AA12"
                BuildableName = "github-repo-listTests.xctest"
                BlueprintName = "github-repo-listTests"
                ReferencedContainer = "container:github-repo-list.xcodeproj">
@@ -64,7 +64,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313A2C281A08157300F1073A"
+               BlueprintIdentifier = "E270C68E1B4C56CF00F5AA12"
                BuildableName = "github-repo-listTests.xctest"
                BlueprintName = "github-repo-listTests"
                ReferencedContainer = "container:github-repo-list.xcodeproj">
@@ -90,7 +90,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "313A2C0F1A08157300F1073A"
@@ -108,7 +109,8 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "313A2C0F1A08157300F1073A"

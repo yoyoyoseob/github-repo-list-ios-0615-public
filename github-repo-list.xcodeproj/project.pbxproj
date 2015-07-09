@@ -22,7 +22,6 @@
 		E270C69D1B4C56FC00F5AA12 /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 313A2C521A081CDF00F1073A /* repositories.json */; };
 		E270C69E1B4C570100F5AA12 /* FISReposDataStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 313A2C431A08163500F1073A /* FISReposDataStoreSpec.m */; };
 		E270C69F1B4C570100F5AA12 /* FISReposTableViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 313A2C441A08163500F1073A /* FISReposTableViewControllerSpec.m */; };
-		E270C6A21B4C583200F5AA12 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E270C6A11B4C583200F5AA12 /* Info.plist */; };
 		E2F307191B4B063200430A97 /* FISGithubAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F307181B4B063200430A97 /* FISGithubAPIClient.m */; };
 		E2F3071C1B4B063C00430A97 /* FISReposDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F3071B1B4B063C00430A97 /* FISReposDataStore.m */; };
 /* End PBXBuildFile section */
@@ -113,17 +112,9 @@
 		313A2C121A08157300F1073A /* github-repo-list */ = {
 			isa = PBXGroup;
 			children = (
-				313A2C171A08157300F1073A /* AppDelegate.h */,
-				313A2C181A08157300F1073A /* AppDelegate.m */,
-				313A2C391A0815B500F1073A /* FISReposTableViewController.h */,
-				313A2C3A1A0815B500F1073A /* FISReposTableViewController.m */,
-				313A2C3B1A0815B500F1073A /* FISGithubRepository.h */,
-				313A2C3C1A0815B500F1073A /* FISGithubRepository.m */,
-				E2F307171B4B063200430A97 /* FISGithubAPIClient.h */,
-				E2F307181B4B063200430A97 /* FISGithubAPIClient.m */,
-				E2F3071A1B4B063C00430A97 /* FISReposDataStore.h */,
-				E2F3071B1B4B063C00430A97 /* FISReposDataStore.m */,
-				313A2C1D1A08157300F1073A /* Main.storyboard */,
+				71C7AF5D1B4D8F3300FAADD6 /* Controllers */,
+				71C7AF5C1B4D8F2A00FAADD6 /* Views */,
+				71C7AF5B1B4D8F1E00FAADD6 /* Models */,
 				313A2C201A08157300F1073A /* Images.xcassets */,
 				313A2C221A08157300F1073A /* LaunchScreen.xib */,
 				313A2C131A08157300F1073A /* Supporting Files */,
@@ -160,6 +151,38 @@
 				E270C6A11B4C583200F5AA12 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71C7AF5B1B4D8F1E00FAADD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				313A2C171A08157300F1073A /* AppDelegate.h */,
+				313A2C181A08157300F1073A /* AppDelegate.m */,
+				313A2C3B1A0815B500F1073A /* FISGithubRepository.h */,
+				313A2C3C1A0815B500F1073A /* FISGithubRepository.m */,
+				E2F307171B4B063200430A97 /* FISGithubAPIClient.h */,
+				E2F307181B4B063200430A97 /* FISGithubAPIClient.m */,
+				E2F3071A1B4B063C00430A97 /* FISReposDataStore.h */,
+				E2F3071B1B4B063C00430A97 /* FISReposDataStore.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		71C7AF5C1B4D8F2A00FAADD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				313A2C1D1A08157300F1073A /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		71C7AF5D1B4D8F3300FAADD6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				313A2C391A0815B500F1073A /* FISReposTableViewController.h */,
+				313A2C3A1A0815B500F1073A /* FISReposTableViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		9B207A8364C29294E706748C /* Frameworks */ = {
@@ -230,7 +253,7 @@
 		313A2C081A08157300F1073A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Zachary Drossman";
 				TargetAttributes = {
 					313A2C0F1A08157300F1073A = {
@@ -277,7 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E270C6A21B4C583200F5AA12 /* Info.plist in Resources */,
 				E270C69D1B4C56FC00F5AA12 /* repositories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

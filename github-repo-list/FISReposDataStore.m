@@ -29,5 +29,31 @@
     return self;
 }
 
+-(void)parseAllReposWithCompletion:(void (^)(NSArray*))block
+{
+    [FISGithubAPIClient getAllReposWithCompletionHandler:^(NSArray *repos, NSError *error) {
+        [self.repositories removeAllObjects];
+        for (NSDictionary *repo in repos)
+        {
+            [self.repositories addObject:[FISGithubRepository parseSingleDictionary:repo]];
+        }
+        block([self.repositories copy]);
+    }];
+}
+
+//-(void)fetchRepositoriesWithCompletion:(void(^)(BOOL))block;
+//{
+//    [FISGithubAPIClient getAllReposWithCompletionHandler:^(NSArray *repoNames, NSError *error) {
+//        [self.repositories removeAllObjects]; // Clear it just in case
+//        for (NSDictionary *repoDict in repoNames)
+//        {
+//            FISGithubRepository *repo = [[FISGithubRepository alloc]initWithDictionary:repoDict];
+//            [self.repositories addObject:repo];
+//        }
+//        
+//        block(YES);
+//    }];
+//}
+
 
 @end
